@@ -1,6 +1,4 @@
 import pandas as pd
-import os
-
 
 casino = pd.read_csv("casino_settup2.csv",low_memory=False)
 corelare = pd.read_csv("corelare_locatii2.csv",low_memory=False)
@@ -168,4 +166,5 @@ roi_df["ROI"] = (roi_df["Total_GGR"] - roi_df["Total_Jackpot"]) / (
     roi_df["Total_Jackpot"].replace(0, 1))
 
 roi_df_sorted = roi_df.sort_values("ROI", ascending=False)
+
 roi_df_sorted.head(10)
